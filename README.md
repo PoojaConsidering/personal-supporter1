@@ -166,7 +166,7 @@ All your data stays on your device. Music files, album covers, and flashcards ar
 
 ## Status
 
-🚧 Currently in development
+Deployed studywme-alpha.vercel.app
 
 ---
 
