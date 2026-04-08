@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Special+Elite&display=swap');
+
+:root {
+  --bg-primary: #1a1410;
+  --bg-secondary: #231d17;
+  --bg-card: #2a2218;
+  --bg-hover: #332b1f;
+
+  --accent-gold: #c9973a;
+  --accent-amber: #d4a853;
+  --accent-rust: #b85c38;
+  --accent-cream: #e8dcc8;
+  --accent-sage: #7a8c6e;
+
+  --text-primary: #e8dcc8;
+  --text-secondary: #b5a48a;
+  --text-muted: #7a6e5e;
+  --text-dark: #1a1410;
+
+  --border: #3d3226;
+  --border-accent: #c9973a44;
+
+  --shadow-warm: 0 4px 24px rgba(201, 151, 58, 0.15);
+  --shadow-deep: 0 8px 40px rgba(0, 0, 0, 0.5);
+
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Crimson Text', serif;
+  --font-mono: 'Special Elite', cursive;
+
+  --radius: 4px;
+  --radius-lg: 8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.6;
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(201, 151, 58, 0.04) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(184, 92, 56, 0.04) 0%, transparent 60%);
+}
+
+/* Grain overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.4;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-gold);
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+input, textarea {
+  font-family: var(--font-body);
+}
+
+.page-enter {
+  animation: fadeUp 0.4s ease forwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
